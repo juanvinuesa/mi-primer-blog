@@ -6,17 +6,12 @@
         <div>
             <h1><a href="/">Juan Vinuesa  Blog</a></h1>
         </div>
-
         <div>
-            <p>publicado: 14.06.2021, 12:14</p>
-            <h2><a href="">Mi primer posteo</a></h2>
-            <p>Este es un intento de primero post, estuve haciendo esto toda la manana espero que les guste.</p>
+        {% for post in posts %}
+            <p> publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+        {% endfor %}
         </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Mi segundo posteo</a></h2>
-            <p>Estoy tratando de entender este lenguaje.</p>
-        </div>
-    </body>
+        </body>
 </html>
