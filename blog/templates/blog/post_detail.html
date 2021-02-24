@@ -25,7 +25,9 @@
 
 {% empty %}
 
+             <div>
                 <p>Sin comentarios :(</p>
+             </div>
            <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}"> Add comment</a>
 
 
