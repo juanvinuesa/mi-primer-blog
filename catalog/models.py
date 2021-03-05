@@ -30,7 +30,7 @@ class Book(models.Model):
         """
         String que representa al objeto Book
         """
-        return self.title
+        return self.titulo
 
 
     def get_absolute_url(self):
@@ -78,3 +78,13 @@ class Author(models.Model):
         String para representar el Objeto Modelo
         """
         return '%s, %s' % (self.last_name, self.first_name)
+
+class Sc_Article(models.Model):
+    titulo = models.CharField(max_length=200)
+    autor = models.CharField(max_length=200, help_text="Ingrese el nombre del autor del articulo")
+    doi= models.CharField('DOI',max_length=30)
+    def __str__(self):
+        """
+        String que representa al objeto Book
+        """
+        return self.titulo
