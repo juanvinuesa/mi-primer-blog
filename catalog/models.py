@@ -12,16 +12,23 @@ class Sc_Article(models.Model):
 
         return self.titulo
 
-class Genre(models.Model):
-    """
-    Modelo que representa un género literario (p. ej. ciencia ficción, poesía, etc.).
-    """
-    name = models.CharField(max_length=200, help_text="Ingrese el nombre del género (p. ej. Ciencia Ficción, Poesía Francesa etc.)")
-    segundo=models.CharField(max_length=200)
+class Autor(models.Model):
+
+    nombre = models.CharField(max_length = 200, blank = False, null = False)
+    apellidos = models.CharField(max_length = 220, blank = False, null = False)
+    nacionalidad = models.CharField(max_length = 100, blank = False, null = False)
+    descripcion = models.TextField(blank = False,null = False)
+
     def __str__(self):
-        """
-        Cadena que representa a la instancia particular del modelo (p. ej. en el sitio de Administración)
-        """
-        return self.name
+        return self.nombre
+class Libro(models.Model):
+    id = models.AutoField(primary_key = True)
+    titulo = models.CharField('Título', max_length = 255, blank = False, null = False)
+    fecha_publicacion = models.DateField('Fecha de publicación', blank = False, null = False)
+    descripcion = models.TextField('Descripción',null = True,blank = True)
+
+    def __str__(self):
+        return self.titulo
+
 
 
