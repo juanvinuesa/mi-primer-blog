@@ -1,14 +1,14 @@
 from django.contrib import admin
-from .models import Sc_Article,Autor,Libro,Claves
+from .models import Articles,Authors,Books,Keys
 
 
 
 
 
-admin.site.register(Sc_Article)
-admin.site.register(Autor)
-admin.site.register(Libro)
-admin.site.register(Claves)
+admin.site.register(Articles)
+admin.site.register(Authors)
+admin.site.register(Books)
+admin.site.register(Keys)
 
 
 # Register your models here.
